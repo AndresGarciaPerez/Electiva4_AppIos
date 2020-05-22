@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		337381592468B63000ED6EB6 /* DetailAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337381582468B63000ED6EB6 /* DetailAccessoryView.swift */; };
+		3376BBB82466FEDC006FB1D7 /* DetailAccessoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */; };
+		3376BBBA2467006A006FB1D7 /* DetailAccessoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBB92467006A006FB1D7 /* DetailAccessoryModel.swift */; };
+		3376BBBE24671620006FB1D7 /* SparepartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBBD24671620006FB1D7 /* SparepartListView.swift */; };
 		33ACDEC2245FC64900C53C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACDEC1245FC64900C53C55 /* AppDelegate.swift */; };
-		33ACDEC4245FC64900C53C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACDEC3245FC64900C53C55 /* ViewController.swift */; };
+		33ACDEC4245FC64900C53C55 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACDEC3245FC64900C53C55 /* HomeController.swift */; };
 		33ACDEC7245FC64900C53C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDEC5245FC64900C53C55 /* Main.storyboard */; };
 		33ACDEC9245FC64900C53C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDEC8245FC64900C53C55 /* Assets.xcassets */; };
 		33ACDECC245FC64900C53C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDECA245FC64900C53C55 /* LaunchScreen.storyboard */; };
+		33E712002460588A00169263 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E711FF2460588A00169263 /* Extensions.swift */; };
+		33E7120324605BB500169263 /* AccessoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7120224605BB500169263 /* AccessoryListView.swift */; };
+		33E7120624605EFD00169263 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7120524605EFD00169263 /* MenuBar.swift */; };
+		33E71209246091F600169263 /* AccesoriesModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E71208246091F600169263 /* AccesoriesModel .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		337381582468B63000ED6EB6 /* DetailAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccessoryView.swift; sourceTree = "<group>"; };
+		3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccessoryController.swift; sourceTree = "<group>"; };
+		3376BBB92467006A006FB1D7 /* DetailAccessoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccessoryModel.swift; sourceTree = "<group>"; };
+		3376BBBD24671620006FB1D7 /* SparepartListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparepartListView.swift; sourceTree = "<group>"; };
 		33ACDEBE245FC64900C53C55 /* InventoryModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ACDEC1245FC64900C53C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33ACDEC3245FC64900C53C55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33ACDEC3245FC64900C53C55 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		33ACDEC6245FC64900C53C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33ACDEC8245FC64900C53C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33ACDECB245FC64900C53C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		33ACDECD245FC64900C53C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33E711FF2460588A00169263 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		33E7120224605BB500169263 /* AccessoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryListView.swift; sourceTree = "<group>"; };
+		33E7120524605EFD00169263 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		33E71208246091F600169263 /* AccesoriesModel .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccesoriesModel .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +70,54 @@
 		33ACDEC0245FC64900C53C55 /* InventoryModule */ = {
 			isa = PBXGroup;
 			children = (
+				33E71207246091B700169263 /* Model */,
+				33E7120424605C8100169263 /* Controller */,
+				33E7120124605B0100169263 /* View */,
+				33E711FE2460583D00169263 /* Helpers */,
 				33ACDEC1245FC64900C53C55 /* AppDelegate.swift */,
-				33ACDEC3245FC64900C53C55 /* ViewController.swift */,
 				33ACDEC5245FC64900C53C55 /* Main.storyboard */,
 				33ACDEC8245FC64900C53C55 /* Assets.xcassets */,
 				33ACDECA245FC64900C53C55 /* LaunchScreen.storyboard */,
 				33ACDECD245FC64900C53C55 /* Info.plist */,
 			);
 			path = InventoryModule;
+			sourceTree = "<group>";
+		};
+		33E711FE2460583D00169263 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				33E711FF2460588A00169263 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		33E7120124605B0100169263 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33E7120224605BB500169263 /* AccessoryListView.swift */,
+				33E7120524605EFD00169263 /* MenuBar.swift */,
+				3376BBBD24671620006FB1D7 /* SparepartListView.swift */,
+				337381582468B63000ED6EB6 /* DetailAccessoryView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		33E7120424605C8100169263 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				33ACDEC3245FC64900C53C55 /* HomeController.swift */,
+				3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		33E71207246091B700169263 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				33E71208246091F600169263 /* AccesoriesModel .swift */,
+				3376BBB92467006A006FB1D7 /* DetailAccessoryModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +192,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33ACDEC4245FC64900C53C55 /* ViewController.swift in Sources */,
+				33E71209246091F600169263 /* AccesoriesModel .swift in Sources */,
+				3376BBBE24671620006FB1D7 /* SparepartListView.swift in Sources */,
+				3376BBB82466FEDC006FB1D7 /* DetailAccessoryController.swift in Sources */,
+				33ACDEC4245FC64900C53C55 /* HomeController.swift in Sources */,
+				337381592468B63000ED6EB6 /* DetailAccessoryView.swift in Sources */,
+				33E712002460588A00169263 /* Extensions.swift in Sources */,
 				33ACDEC2245FC64900C53C55 /* AppDelegate.swift in Sources */,
+				3376BBBA2467006A006FB1D7 /* DetailAccessoryModel.swift in Sources */,
+				33E7120324605BB500169263 /* AccessoryListView.swift in Sources */,
+				33E7120624605EFD00169263 /* MenuBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +361,7 @@
 				33ACDED2245FC64900C53C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
