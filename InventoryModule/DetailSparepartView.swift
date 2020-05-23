@@ -1,25 +1,25 @@
 //
-//  DetailAccessoryView.swift
+//  DetailSparepartView.swift
 //  InventoryModule
 //
-//  Created by development on 5/10/20.
+//  Created by development on 5/23/20.
 //  Copyright © 2020 development. All rights reserved.
 //
 
 import UIKit
 
 
-class AccessoryDetailView: UIView {
+class SparepartDetailView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         AccessoryDetailLayout()
         
-}
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     
     
@@ -82,24 +82,7 @@ class AccessoryDetailView: UIView {
         return label
     }()
     
-    /*
-    let ubicacionButton: UIButton = {
-        let button = UIButton()
-        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
-        button.setTitleColor(UIColor.blue, for: .normal)
-        button.setTitle("Ubicaciones", for: .normal)
-        button.layer.borderColor = UIColor.blue.cgColor
-        button.layer.borderWidth = 0.5
-        button.layer.cornerRadius = 3
-        button.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        button.translatesAutoresizingMaskIntoConstraints = false
-        //button.addTarget(self, action: #selector(locations), for: .touchUpInside)
-        return button
-    }()
-    */
 
-    
-    
     //ESTE ES LA FUNCION LA CUAL HAY QUE AGREGARLE LOS LABEL, IMAGEVIEW, ETC
     //TAMBIEN AQUI SE LE DARA LA UBICACION Y TAMAANIO A CADA CONTROL
     func AccessoryDetailLayout() {
@@ -110,7 +93,6 @@ class AccessoryDetailView: UIView {
         addSubview(precioCompraLabel)
         addSubview(unidadesDisponiblesLabel)
         addSubview(proveedorLabel)
-        //addSubview(ubicacionButton)
 
         
         addConstraint(NSLayoutConstraint(item: accessoryImage, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
@@ -140,23 +122,9 @@ class AccessoryDetailView: UIView {
         //Label proveedor
         addConstraint(NSLayoutConstraint(item: proveedorLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 20))
         addConstraint(NSLayoutConstraint(item: proveedorLabel, attribute: .top, relatedBy: .equal, toItem: unidadesDisponiblesLabel, attribute: .top, multiplier: 1, constant: 20))
-        //Button ubicacion
-       /* addConstraint(NSLayoutConstraint(item: ubicacionButton, attribute: .top, relatedBy: .equal, toItem: proveedorLabel, attribute: .top, multiplier: 1, constant: 40))
-        addConstraint(NSLayoutConstraint(item: ubicacionButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)) */
+    
         
         
-    }
-    
- 
-    
-    
-    
 }
 
-
-    
-    
- 
-    
-
-
+}

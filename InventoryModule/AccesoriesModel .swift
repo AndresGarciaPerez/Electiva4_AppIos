@@ -18,3 +18,13 @@ class AccesoriesModel: NSObject{
 }
 
 
+class LoginModel: NSObject{
+    
+    var _ApiToken: String?
+
+    
+    
+}
+
+
+

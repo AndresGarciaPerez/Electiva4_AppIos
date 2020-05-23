@@ -8,11 +8,10 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-    
+class AccessoriesListController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
     //COMO CONSUMIR UN REST JSON
-    let tokenapi = "o0cjDCNE-5-x9-Ja0Zxd5d29NBan6FRPoqtdxi8NrZ4"
+    let tokenapi = "7yh8ficfgWp-9F1LGafE3PsN1RmyiR__1nAhgoI3dMY"
 
     var products: [AccesoriesModel]?
     
@@ -74,16 +73,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         navigationItem.title = "Accesorios"
         navigationController?.navigationBar.isTranslucent = false
-        
         collectionView?.backgroundColor = UIColor.white
-        
-        collectionView?.register(ImageCell.self, forCellWithReuseIdentifier: "cellId")
-        //collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
-        
-        
+        collectionView?.register(AccesoriesCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        
         setupMenuBar()
         
     }
@@ -102,7 +95,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     //REVISAR ESTA FUNCION ERROR AL CARGAR LA API
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ImageCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! AccesoriesCell
         cell.product = products?[indexPath.item]
         return cell
         

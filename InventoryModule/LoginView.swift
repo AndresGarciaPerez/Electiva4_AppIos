@@ -24,8 +24,9 @@ class ViewLogin: UIView{
         image.widthAnchor.constraint(equalToConstant: 100).isActive = true
         image.heightAnchor.constraint(equalToConstant: 100).isActive = true
         image.backgroundColor = UIColor.white
-        image.image = UIImage(named: "icons8-usuario-masculino-en-círculo-24")
-        image.layer.cornerRadius = 6
+        image.image = UIImage(named: "pclogin")
+        image.layer.cornerRadius = 50
+        image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -49,7 +50,7 @@ class ViewLogin: UIView{
     
     let emailLabel: UILabel = {
         let label = UILabel()
-        label.text = "Email"
+        label.text = "    Email"
         label.font = label.font.withSize(12)
         label.textColor = UIColor.darkGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +60,7 @@ class ViewLogin: UIView{
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.font = textField.font?.withSize(12)
-        textField.placeholder = "Email"
+        textField.placeholder = "   Email"
         textField.layer.borderColor = UIColor.darkGray.cgColor
         textField.layer.borderWidth = 0.5
         textField.widthAnchor.constraint(equalToConstant: 275).isActive = true
@@ -70,7 +71,7 @@ class ViewLogin: UIView{
     
     let passLabel: UILabel = {
         let label = UILabel()
-        label.text = "Contrasenia"
+        label.text = "    Contraseña"
         label.font = label.font.withSize(12)
         label.textColor = UIColor.darkGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +81,7 @@ class ViewLogin: UIView{
     let passTextField: UITextField = {
         let textField = UITextField()
         textField.font = textField.font?.withSize(12)
-        textField.placeholder = "Contrasenia"
+        textField.placeholder = "   Contraseña"
         textField.layer.borderColor = UIColor.darkGray.cgColor
         textField.layer.borderWidth = 0.5
         textField.widthAnchor.constraint(equalToConstant: 275).isActive = true
@@ -103,17 +104,19 @@ class ViewLogin: UIView{
         addConstraint(NSLayoutConstraint(item: loginImage, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 40))
         
         addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: loginImage, attribute: .top, multiplier: 1, constant: 135))
+        addConstraint(NSLayoutConstraint(item: titleLabel, attribute: .top, relatedBy: .equal, toItem: loginImage, attribute: .top, multiplier: 1, constant: 110))
         
         addConstraint(NSLayoutConstraint(item: welcomeLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: welcomeLabel, attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .top, multiplier: 1, constant: 20))
         
         addConstraint(NSLayoutConstraint(item: emailLabel, attribute: .top, relatedBy: .equal, toItem: welcomeLabel, attribute: .top, multiplier: 1, constant: 40))
         
+        addConstraint(NSLayoutConstraint(item: emailTextField, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: emailTextField, attribute: .top, relatedBy: .equal, toItem: emailLabel, attribute: .top, multiplier: 1, constant: 20))
         
         addConstraint(NSLayoutConstraint(item: passLabel, attribute: .top, relatedBy: .equal, toItem: emailTextField, attribute: .top, multiplier: 1, constant: 55))
         
+        addConstraint(NSLayoutConstraint(item: passTextField, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: passTextField, attribute: .top, relatedBy: .equal, toItem: passLabel, attribute: .top, multiplier: 1, constant: 20))
         
     }

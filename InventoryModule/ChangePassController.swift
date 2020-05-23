@@ -1,5 +1,5 @@
 //
-//  ProfileController.swift
+//  ChangePassController.swift
 //  InventoryModule
 //
 //  Created by development on 5/22/20.
@@ -8,27 +8,23 @@
 
 import UIKit
 
-
-
-class ProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ChangePassController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let vista = ViewProfile()
+    let vista = ViewPassChange()
     
     override func loadView() {
         view = vista
         view.backgroundColor = UIColor.white
     }
-    
-    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Perfil"
+        navigationItem.title = "Cambiar contraseña"
         navigationController?.navigationBar.isTranslucent = false
         collectionView?.backgroundColor = UIColor.white
-        collectionView?.register(ViewProfile.self, forSupplementaryViewOfKind: "profile", withReuseIdentifier: "profile")
-        collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        
         
         // Agrego los button en el controlador para poder hacer uso de navigationController?
         let logoutButton = UIButton()
@@ -54,15 +50,13 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
         changePassButton.addTarget(self, action: #selector(changePass), for: .touchUpInside)
         self.view.addSubview(changePassButton)
         
-        
     }
     
     
-    
     func changePass(sender: UIButton){
-        let layount = UICollectionViewFlowLayout()
-        let controller = ChangePassController(collectionViewLayout: layount)
-        navigationController?.pushViewController(controller, animated: true )
+        //let controller = LoginController()
+        //self.present(controller, animated: true, completion: nil)
+        print("Se cambio la contraseña")
     }
     
     func logout(sender: UIButton){
@@ -71,9 +65,9 @@ class ProfileController: UICollectionViewController, UICollectionViewDelegateFlo
     }
     
     
+    
+    
+    
 
-    
-    
-    
-   
+
 }

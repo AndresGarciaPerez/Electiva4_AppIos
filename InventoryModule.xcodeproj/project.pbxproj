@@ -10,9 +10,9 @@
 		337381592468B63000ED6EB6 /* DetailAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337381582468B63000ED6EB6 /* DetailAccessoryView.swift */; };
 		3376BBB82466FEDC006FB1D7 /* DetailAccessoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */; };
 		3376BBBA2467006A006FB1D7 /* DetailAccessoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBB92467006A006FB1D7 /* DetailAccessoryModel.swift */; };
-		3376BBBE24671620006FB1D7 /* SparepartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBBD24671620006FB1D7 /* SparepartListView.swift */; };
+		3376BBBE24671620006FB1D7 /* SparepartsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3376BBBD24671620006FB1D7 /* SparepartsListView.swift */; };
 		33ACDEC2245FC64900C53C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACDEC1245FC64900C53C55 /* AppDelegate.swift */; };
-		33ACDEC4245FC64900C53C55 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACDEC3245FC64900C53C55 /* HomeController.swift */; };
+		33ACDEC4245FC64900C53C55 /* AccessoriesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33ACDEC3245FC64900C53C55 /* AccessoriesListController.swift */; };
 		33ACDEC7245FC64900C53C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDEC5245FC64900C53C55 /* Main.storyboard */; };
 		33ACDEC9245FC64900C53C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDEC8245FC64900C53C55 /* Assets.xcassets */; };
 		33ACDECC245FC64900C53C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDECA245FC64900C53C55 /* LaunchScreen.storyboard */; };
@@ -25,16 +25,22 @@
 		33F607E32478A3B400F54DEC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E22478A3B400F54DEC /* ProfileView.swift */; };
 		33F607E52478D55800F54DEC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E42478D55800F54DEC /* LoginController.swift */; };
 		33F607E72478EA2200F54DEC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E62478EA2100F54DEC /* LoginView.swift */; };
+		33F607E92478FF6100F54DEC /* ChangePassController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E82478FF6100F54DEC /* ChangePassController.swift */; };
+		33F607EB2478FFF000F54DEC /* ChangePassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607EA2478FFF000F54DEC /* ChangePassView.swift */; };
+		33F607ED2479224E00F54DEC /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607EC2479224E00F54DEC /* LocationsListView.swift */; };
+		33F607EF2479470E00F54DEC /* SparepartsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607EE2479470E00F54DEC /* SparepartsListController.swift */; };
+		33F607F12479484500F54DEC /* DetailSparepartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607F02479484500F54DEC /* DetailSparepartController.swift */; };
+		33F607F32479490000F54DEC /* DetailSparepartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607F22479490000F54DEC /* DetailSparepartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		337381582468B63000ED6EB6 /* DetailAccessoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccessoryView.swift; sourceTree = "<group>"; };
 		3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccessoryController.swift; sourceTree = "<group>"; };
 		3376BBB92467006A006FB1D7 /* DetailAccessoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAccessoryModel.swift; sourceTree = "<group>"; };
-		3376BBBD24671620006FB1D7 /* SparepartListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparepartListView.swift; sourceTree = "<group>"; };
+		3376BBBD24671620006FB1D7 /* SparepartsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparepartsListView.swift; sourceTree = "<group>"; };
 		33ACDEBE245FC64900C53C55 /* InventoryModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InventoryModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33ACDEC1245FC64900C53C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33ACDEC3245FC64900C53C55 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		33ACDEC3245FC64900C53C55 /* AccessoriesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessoriesListController.swift; sourceTree = "<group>"; };
 		33ACDEC6245FC64900C53C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33ACDEC8245FC64900C53C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33ACDECB245FC64900C53C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +54,12 @@
 		33F607E22478A3B400F54DEC /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		33F607E42478D55800F54DEC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		33F607E62478EA2100F54DEC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		33F607E82478FF6100F54DEC /* ChangePassController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassController.swift; sourceTree = "<group>"; };
+		33F607EA2478FFF000F54DEC /* ChangePassView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePassView.swift; sourceTree = "<group>"; };
+		33F607EC2479224E00F54DEC /* LocationsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		33F607EE2479470E00F54DEC /* SparepartsListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparepartsListController.swift; sourceTree = "<group>"; };
+		33F607F02479484500F54DEC /* DetailSparepartController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSparepartController.swift; sourceTree = "<group>"; };
+		33F607F22479490000F54DEC /* DetailSparepartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailSparepartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +118,13 @@
 			children = (
 				33E7120224605BB500169263 /* AccessoryListView.swift */,
 				33E7120524605EFD00169263 /* TabMenuBar.swift */,
-				3376BBBD24671620006FB1D7 /* SparepartListView.swift */,
+				3376BBBD24671620006FB1D7 /* SparepartsListView.swift */,
 				337381582468B63000ED6EB6 /* DetailAccessoryView.swift */,
 				33F607E22478A3B400F54DEC /* ProfileView.swift */,
 				33F607E62478EA2100F54DEC /* LoginView.swift */,
+				33F607EA2478FFF000F54DEC /* ChangePassView.swift */,
+				33F607EC2479224E00F54DEC /* LocationsListView.swift */,
+				33F607F22479490000F54DEC /* DetailSparepartView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -117,11 +132,14 @@
 		33E7120424605C8100169263 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33ACDEC3245FC64900C53C55 /* HomeController.swift */,
+				33ACDEC3245FC64900C53C55 /* AccessoriesListController.swift */,
 				3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */,
 				33F607DE2478035C00F54DEC /* LocationsController.swift */,
 				33F607E024787DEE00F54DEC /* ProfileController.swift */,
 				33F607E42478D55800F54DEC /* LoginController.swift */,
+				33F607E82478FF6100F54DEC /* ChangePassController.swift */,
+				33F607EE2479470E00F54DEC /* SparepartsListController.swift */,
+				33F607F02479484500F54DEC /* DetailSparepartController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -211,15 +229,21 @@
 				33E71209246091F600169263 /* AccesoriesModel .swift in Sources */,
 				33F607E32478A3B400F54DEC /* ProfileView.swift in Sources */,
 				33F607E72478EA2200F54DEC /* LoginView.swift in Sources */,
-				3376BBBE24671620006FB1D7 /* SparepartListView.swift in Sources */,
+				3376BBBE24671620006FB1D7 /* SparepartsListView.swift in Sources */,
 				3376BBB82466FEDC006FB1D7 /* DetailAccessoryController.swift in Sources */,
-				33ACDEC4245FC64900C53C55 /* HomeController.swift in Sources */,
+				33F607EB2478FFF000F54DEC /* ChangePassView.swift in Sources */,
+				33F607E92478FF6100F54DEC /* ChangePassController.swift in Sources */,
+				33F607EF2479470E00F54DEC /* SparepartsListController.swift in Sources */,
+				33ACDEC4245FC64900C53C55 /* AccessoriesListController.swift in Sources */,
 				337381592468B63000ED6EB6 /* DetailAccessoryView.swift in Sources */,
+				33F607F12479484500F54DEC /* DetailSparepartController.swift in Sources */,
 				33E712002460588A00169263 /* Extensions.swift in Sources */,
 				33F607DF2478035C00F54DEC /* LocationsController.swift in Sources */,
 				33ACDEC2245FC64900C53C55 /* AppDelegate.swift in Sources */,
 				3376BBBA2467006A006FB1D7 /* DetailAccessoryModel.swift in Sources */,
 				33E7120324605BB500169263 /* AccessoryListView.swift in Sources */,
+				33F607ED2479224E00F54DEC /* LocationsListView.swift in Sources */,
+				33F607F32479490000F54DEC /* DetailSparepartView.swift in Sources */,
 				33E7120624605EFD00169263 /* TabMenuBar.swift in Sources */,
 				33F607E124787DEE00F54DEC /* ProfileController.swift in Sources */,
 			);

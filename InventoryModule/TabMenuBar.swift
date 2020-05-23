@@ -12,8 +12,8 @@ class MenuBar: UITabBarController {
     
     override func viewDidLoad() {
         let layount = UICollectionViewFlowLayout()
-        let accessoriesOption = HomeController(collectionViewLayout: layount)
-        let sparePartsOption = HomeController(collectionViewLayout: layount)
+        let accessoriesOption = SparepartsListController(collectionViewLayout: layount)
+        let sparePartsOption = AccessoriesListController(collectionViewLayout: layount)
         let profileOption = ProfileController(collectionViewLayout: layount)
         
         let accessories = UINavigationController(rootViewController: accessoriesOption)

@@ -1,8 +1,8 @@
 //
-//  Elements .swift
+//  SparepartListView.swift
 //  InventoryModule
 //
-//  Created by development on 5/4/20.
+//  Created by development on 5/9/20.
 //  Copyright © 2020 development. All rights reserved.
 //
 
@@ -10,43 +10,42 @@ import UIKit
 
 
 
-class AccessoriesViewCell: UICollectionViewCell {
+class SparepartsViewCell: UICollectionViewCell {
     override init(frame: CGRect){
         super.init(frame: frame)
         setupViews()
-        print("////////////DENTRO DE LA CLASE BASECELL/////////////////")
     }
     
     func setupViews(){
-
-    
+        
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
-class AccesoriesCell: AccessoriesViewCell{
+class SparepartsCell: SparepartsViewCell{
     
     var product:  AccesoriesModel? {
         didSet {
             nameProduct.text = product?.nameAccesory
             quantityProduct.text = product?.quantityAccesory
             //setupImage()
-
+            
         }
     }
     
     
     //ESTA FUNCION NOR SIRVE PARA VISUALIZAR LA IMAGEN QUE TRAEMOS DE LA API
-
+    
     
     //imagen
     let imageProduct: UIImageView = {
         let imageView  = UIImageView()
         imageView.backgroundColor = UIColor.green
-        imageView.image = UIImage(named: "earpods")
+        imageView.image = UIImage(named: "ejemrepuesto")
         return imageView
     }()
     
@@ -79,7 +78,7 @@ class AccesoriesCell: AccessoriesViewCell{
         textview.textContainerInset = UIEdgeInsetsMake(0, -4, 0, 0)
         textview.textColor = UIColor.lightGray
         return textview
-
+        
     }()
     
     
@@ -136,7 +135,7 @@ class AccesoriesCell: AccessoriesViewCell{
     
     
     
-
+    
     
 }
 

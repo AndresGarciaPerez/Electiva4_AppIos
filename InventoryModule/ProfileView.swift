@@ -24,8 +24,9 @@ class ViewProfile: UIView{
         image.widthAnchor.constraint(equalToConstant: 100).isActive = true
         image.heightAnchor.constraint(equalToConstant: 100).isActive = true
         image.backgroundColor = UIColor.green
-        image.image = UIImage(named: "icons8-usuario-masculino-en-círculo-24")
-        image.layer.cornerRadius = 6
+        image.image = UIImage(named: "perfilnegro")
+        image.layer.cornerRadius = 50
+        image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -99,17 +100,21 @@ class ViewProfile: UIView{
         addConstraint(NSLayoutConstraint(item: profileImage, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 20))
         
         addConstraint(NSLayoutConstraint(item: nameProfileLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: nameProfileLabel, attribute: .top, relatedBy: .equal, toItem: profileImage, attribute: .top, multiplier: 1, constant: 135))
+        addConstraint(NSLayoutConstraint(item: nameProfileLabel, attribute: .top, relatedBy: .equal, toItem: profileImage, attribute: .top, multiplier: 1, constant: 110))
         
         addConstraint(NSLayoutConstraint(item: levelProfileLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: levelProfileLabel, attribute: .top, relatedBy: .equal, toItem: nameProfileLabel, attribute: .top, multiplier: 1, constant: 20))
         
+        addConstraint(NSLayoutConstraint(item: userProfileLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 20))
         addConstraint(NSLayoutConstraint(item: userProfileLabel, attribute: .top, relatedBy: .equal, toItem: levelProfileLabel, attribute: .top, multiplier: 1, constant: 40))
         
+        addConstraint(NSLayoutConstraint(item: setUserProfileLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 20))
         addConstraint(NSLayoutConstraint(item: setUserProfileLabel, attribute: .top, relatedBy: .equal, toItem: userProfileLabel, attribute: .top, multiplier: 1, constant: 20))
         
+        addConstraint(NSLayoutConstraint(item: passProfileLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 20))
         addConstraint(NSLayoutConstraint(item: passProfileLabel, attribute: .top, relatedBy: .equal, toItem: setUserProfileLabel, attribute: .top, multiplier: 1, constant: 30))
         
+        addConstraint(NSLayoutConstraint(item: setPassProfileLabel, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 20))
         addConstraint(NSLayoutConstraint(item: setPassProfileLabel, attribute: .top, relatedBy: .equal, toItem: passProfileLabel, attribute: .top, multiplier: 1, constant: 20))
         
    
