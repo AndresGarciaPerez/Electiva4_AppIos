@@ -8,33 +8,43 @@
 
 import UIKit
 
-class DetailAccessoryView: UIView {
-
-    override init(frame: CGRect){
-        super.init(frame: frame)
-        
-        backgroundColor = .black
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-}
-
-
-
 
 class DetailAccessoryController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let vista = AccesoryDetailView()
+    let vista = AccessoryDetailView()
     
     override func loadView() {
         view = vista
         view.backgroundColor = UIColor.white
+        
+        
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "Detalle Accesorio"
+        
+        let button = UIButton()
+        button.frame = CGRect(x: 70, y: 310, width: 170, height: 30)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(12)
+        button.setTitleColor(UIColor.blue, for: .normal)
+        button.setTitle("Ubicaciones", for: .normal)
+        button.layer.borderColor = UIColor.blue.cgColor
+        button.layer.borderWidth = 0.5
+        button.layer.cornerRadius = 3
+        button.addTarget(self, action: #selector(locations), for: .touchUpInside)
+        self.view.addSubview(button)
+     
+    }
+    
+    func locations(sender: UIButton){
+        let layount = UICollectionViewFlowLayout()
+        let controller = LocationsController(collectionViewLayout: layount)
+        navigationController?.pushViewController(controller, animated: true )
+    }
+    
+
     
     
     var products: [AccesoriesModel]?
@@ -54,7 +64,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     
 
     
-    
+
     
     
 }

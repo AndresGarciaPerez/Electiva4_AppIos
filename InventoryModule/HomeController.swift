@@ -10,7 +10,6 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-
     
     //COMO CONSUMIR UN REST JSON
     let tokenapi = "o0cjDCNE-5-x9-Ja0Zxd5d29NBan6FRPoqtdxi8NrZ4"
@@ -22,6 +21,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let url = NSURL(string: "https:electivaapi.herokuapp.com/api/v1/products")
         var request = URLRequest(url: url as! URL)
         request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
+
+        
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             
@@ -52,44 +53,43 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                     
                     self.products?.append(producto)
                     
+                    
                 }
                 self.collectionView?.reloadData()
+                
                 
             } catch let jsonError {
                 print(jsonError)
             }
-            
 
-        
         }.resume()
+       
     }
     
-    
+
     //funcion encargada del menu bar
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchAccessories()
         
         navigationItem.title = "Accesorios"
         navigationController?.navigationBar.isTranslucent = false
         
         collectionView?.backgroundColor = UIColor.white
+        
         collectionView?.register(ImageCell.self, forCellWithReuseIdentifier: "cellId")
+        //collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellId")
+        
         
         collectionView?.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-        
         
         setupMenuBar()
         
     }
     
-    
-    
     private func setupMenuBar(){
-
-    
+        
     }
     
     
@@ -100,9 +100,9 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
     }
     
+    //REVISAR ESTA FUNCION ERROR AL CARGAR LA API
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! ImageCell
-        
         cell.product = products?[indexPath.item]
         return cell
         

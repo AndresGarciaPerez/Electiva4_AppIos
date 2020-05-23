@@ -14,17 +14,17 @@ class BaseCell: UICollectionViewCell {
     override init(frame: CGRect){
         super.init(frame: frame)
         setupViews()
-        
+        print("////////////DENTRO DE LA CLASE BASECELL/////////////////")
     }
     
     func setupViews(){
-        
+
     
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 }
 
 class ImageCell: BaseCell{
@@ -32,42 +32,15 @@ class ImageCell: BaseCell{
     var product:  AccesoriesModel? {
         didSet {
             nameProduct.text = product?.nameAccesory
-            
             quantityProduct.text = product?.quantityAccesory
-            
-            setupImage()
-            //imageProduct.image = product?.imageAccesory
-            
-            //imageProduct.image = UIImage(named: (product?.imageAccesory)!)
+            //setupImage()
+
         }
     }
     
     
     //ESTA FUNCION NOR SIRVE PARA VISUALIZAR LA IMAGEN QUE TRAEMOS DE LA API
-    let tokenapi = "mkbn55zQ9366DUWkLkZK44GdkG3x0xAkcXJrVnSy3jE"
-    func setupImage(){
-        if let imageUrl = product?.imageAccesory{
-            let url = NSURL(string: imageUrl)
-            var request = URLRequest(url: url as! URL)
-            request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
-            URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
-                if error != nil {
-                    print(error ?? "genero")
-                    return
-                }
-                print("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
-                print(url ?? "")
-                print("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
-                
-                DispatchQueue.main.async{
-                    self.imageProduct.image = UIImage(data: data!)
-                }
 
-
-            }).resume()
-        }
-    }
-    
     
     //imagen
     let imageProduct: UIImageView = {
@@ -99,6 +72,7 @@ class ImageCell: BaseCell{
     //TextView que mostrara la cantidad de cada accesorio
     let quantityProduct: UITextView = {
         let textview = UITextView()
+        textview.isUserInteractionEnabled = false
         textview.font = textview.font?.withSize(12)
         textview.translatesAutoresizingMaskIntoConstraints = false
         textview.text = "12 disponibles"

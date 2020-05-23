@@ -18,8 +18,13 @@
 		33ACDECC245FC64900C53C55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33ACDECA245FC64900C53C55 /* LaunchScreen.storyboard */; };
 		33E712002460588A00169263 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E711FF2460588A00169263 /* Extensions.swift */; };
 		33E7120324605BB500169263 /* AccessoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7120224605BB500169263 /* AccessoryListView.swift */; };
-		33E7120624605EFD00169263 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7120524605EFD00169263 /* MenuBar.swift */; };
+		33E7120624605EFD00169263 /* TabMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E7120524605EFD00169263 /* TabMenuBar.swift */; };
 		33E71209246091F600169263 /* AccesoriesModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E71208246091F600169263 /* AccesoriesModel .swift */; };
+		33F607DF2478035C00F54DEC /* LocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607DE2478035C00F54DEC /* LocationsController.swift */; };
+		33F607E124787DEE00F54DEC /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E024787DEE00F54DEC /* ProfileController.swift */; };
+		33F607E32478A3B400F54DEC /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E22478A3B400F54DEC /* ProfileView.swift */; };
+		33F607E52478D55800F54DEC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E42478D55800F54DEC /* LoginController.swift */; };
+		33F607E72478EA2200F54DEC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F607E62478EA2100F54DEC /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +41,13 @@
 		33ACDECD245FC64900C53C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33E711FF2460588A00169263 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		33E7120224605BB500169263 /* AccessoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessoryListView.swift; sourceTree = "<group>"; };
-		33E7120524605EFD00169263 /* MenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		33E7120524605EFD00169263 /* TabMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMenuBar.swift; sourceTree = "<group>"; };
 		33E71208246091F600169263 /* AccesoriesModel .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccesoriesModel .swift"; sourceTree = "<group>"; };
+		33F607DE2478035C00F54DEC /* LocationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsController.swift; sourceTree = "<group>"; };
+		33F607E024787DEE00F54DEC /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		33F607E22478A3B400F54DEC /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		33F607E42478D55800F54DEC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		33F607E62478EA2100F54DEC /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +105,11 @@
 			isa = PBXGroup;
 			children = (
 				33E7120224605BB500169263 /* AccessoryListView.swift */,
-				33E7120524605EFD00169263 /* MenuBar.swift */,
+				33E7120524605EFD00169263 /* TabMenuBar.swift */,
 				3376BBBD24671620006FB1D7 /* SparepartListView.swift */,
 				337381582468B63000ED6EB6 /* DetailAccessoryView.swift */,
+				33F607E22478A3B400F54DEC /* ProfileView.swift */,
+				33F607E62478EA2100F54DEC /* LoginView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -107,6 +119,9 @@
 			children = (
 				33ACDEC3245FC64900C53C55 /* HomeController.swift */,
 				3376BBB72466FEDC006FB1D7 /* DetailAccessoryController.swift */,
+				33F607DE2478035C00F54DEC /* LocationsController.swift */,
+				33F607E024787DEE00F54DEC /* ProfileController.swift */,
+				33F607E42478D55800F54DEC /* LoginController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -192,16 +207,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F607E52478D55800F54DEC /* LoginController.swift in Sources */,
 				33E71209246091F600169263 /* AccesoriesModel .swift in Sources */,
+				33F607E32478A3B400F54DEC /* ProfileView.swift in Sources */,
+				33F607E72478EA2200F54DEC /* LoginView.swift in Sources */,
 				3376BBBE24671620006FB1D7 /* SparepartListView.swift in Sources */,
 				3376BBB82466FEDC006FB1D7 /* DetailAccessoryController.swift in Sources */,
 				33ACDEC4245FC64900C53C55 /* HomeController.swift in Sources */,
 				337381592468B63000ED6EB6 /* DetailAccessoryView.swift in Sources */,
 				33E712002460588A00169263 /* Extensions.swift in Sources */,
+				33F607DF2478035C00F54DEC /* LocationsController.swift in Sources */,
 				33ACDEC2245FC64900C53C55 /* AppDelegate.swift in Sources */,
 				3376BBBA2467006A006FB1D7 /* DetailAccessoryModel.swift in Sources */,
 				33E7120324605BB500169263 /* AccessoryListView.swift in Sources */,
-				33E7120624605EFD00169263 /* MenuBar.swift in Sources */,
+				33E7120624605EFD00169263 /* TabMenuBar.swift in Sources */,
+				33F607E124787DEE00F54DEC /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

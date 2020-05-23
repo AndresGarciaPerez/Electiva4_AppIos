@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AccesoryDetailView: UIView {
+class AccessoryDetailView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
         AccessoryDetailLayout()
@@ -24,7 +24,7 @@ class AccesoryDetailView: UIView {
     
     
     //DE AQUI EN DELANTE CREAMOS LOS CONTROLES QUE QUERAMOS
-    let imageAccessory: UIImageView = {
+    let accessoryImage: UIImageView = {
         let imageView  = UIImageView()
         imageView.widthAnchor.constraint(equalToConstant: 130).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 130).isActive = true
@@ -82,6 +82,7 @@ class AccesoryDetailView: UIView {
         return label
     }()
     
+    /*
     let ubicacionButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = button.titleLabel?.font.withSize(12)
@@ -92,30 +93,32 @@ class AccesoryDetailView: UIView {
         button.layer.cornerRadius = 3
         button.widthAnchor.constraint(equalToConstant: 150).isActive = true
         button.translatesAutoresizingMaskIntoConstraints = false
+        //button.addTarget(self, action: #selector(locations), for: .touchUpInside)
         return button
     }()
-    
+    */
+
     
     
     //ESTE ES LA FUNCION LA CUAL HAY QUE AGREGARLE LOS LABEL, IMAGEVIEW, ETC
     //TAMBIEN AQUI SE LE DARA LA UBICACION Y TAMAANIO A CADA CONTROL
     func AccessoryDetailLayout() {
-        addSubview(imageAccessory)
+        addSubview(accessoryImage)
         addSubview(nameAccessoryLabel)
         addSubview(numSerieLabel)
         addSubview(fechaEntregaLabel)
         addSubview(precioCompraLabel)
         addSubview(unidadesDisponiblesLabel)
         addSubview(proveedorLabel)
-        addSubview(ubicacionButton)
+        //addSubview(ubicacionButton)
 
         
-        addConstraint(NSLayoutConstraint(item: imageAccessory, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: accessoryImage, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         //Ubicacion de la imagem
-        addConstraint(NSLayoutConstraint(item: imageAccessory, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 20))
+        addConstraint(NSLayoutConstraint(item: accessoryImage, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 20))
         
         //Ubicacion del label nombre de accesorio
-        addConstraint(NSLayoutConstraint(item: nameAccessoryLabel, attribute: .top, relatedBy: .equal, toItem: imageAccessory, attribute: .top, multiplier: 1, constant: 135))
+        addConstraint(NSLayoutConstraint(item: nameAccessoryLabel, attribute: .top, relatedBy: .equal, toItem: accessoryImage, attribute: .top, multiplier: 1, constant: 135))
         addConstraint(NSLayoutConstraint(item: nameAccessoryLabel, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         //Label numero de serie
         addConstraint(NSLayoutConstraint(item: numSerieLabel, attribute: .top, relatedBy: .equal, toItem: nameAccessoryLabel, attribute: .top, multiplier: 1, constant: 35))
@@ -128,8 +131,8 @@ class AccesoryDetailView: UIView {
         //Label proveedor
         addConstraint(NSLayoutConstraint(item: proveedorLabel, attribute: .top, relatedBy: .equal, toItem: unidadesDisponiblesLabel, attribute: .top, multiplier: 1, constant: 20))
         //Button ubicacion
-        addConstraint(NSLayoutConstraint(item: ubicacionButton, attribute: .top, relatedBy: .equal, toItem: proveedorLabel, attribute: .top, multiplier: 1, constant: 40))
-        addConstraint(NSLayoutConstraint(item: ubicacionButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
+       /* addConstraint(NSLayoutConstraint(item: ubicacionButton, attribute: .top, relatedBy: .equal, toItem: proveedorLabel, attribute: .top, multiplier: 1, constant: 40))
+        addConstraint(NSLayoutConstraint(item: ubicacionButton, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)) */
         
         
     }
