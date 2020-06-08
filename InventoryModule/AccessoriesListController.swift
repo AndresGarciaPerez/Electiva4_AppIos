@@ -17,9 +17,9 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
     
     func fetchAccessories(){
         
-        let url = NSURL(string: "https:electivaapi.herokuapp.com/api/v1/products")
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/ListaItems/accesorios")
         var request = URLRequest(url: url as! URL)
-        request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
+        //request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
 
         
         
@@ -45,9 +45,9 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
                     
                     //ENVIAMOS LOS DATOS A LA CLASE MODEL 
                     let producto = AccesoriesModel()
-                    producto.nameAccesory = dictionary["name"] as? String
-                    producto.quantityAccesory = dictionary["name"] as? String
-                    producto.imageAccesory = dictionary["image"] as? String
+                    producto.nameAccesory = dictionary["item"] as? String
+                    producto.quantityAccesory = dictionary["cantidad"] as? String
+                    producto.imageAccesory = "image"//dictionary["image"] as? String
 
                     
                     self.products?.append(producto)

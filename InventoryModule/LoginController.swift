@@ -46,10 +46,10 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
             "grant_type": "password"
         ]
         
-        guard let url = URL(string: "https:electivaapi.herokuapp.com/oauth/token") else{return}
+        guard let url = URL(string: "https://etps4api.azurewebsites.net/Login/josh/password") else{return}
         var request = URLRequest(url: url)
         //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
+        request.httpMethod = "GET"
    
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else{
         return}
