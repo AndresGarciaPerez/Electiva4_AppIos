@@ -13,6 +13,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     
     let vista = AccessoryDetailView()
     var name = ""
+    var accesory: [AccesoriesModel]?
     //var q = ""
     
     override func loadView() {
@@ -55,7 +56,8 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     //Esta funcion nos sirve para enviarle data al modelo 
     func fetchAccessories(){
     
-        let url = NSURL(string: "https://etps4api.azurewebsites.net/ListaItems/Detalle/\(name)")
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/Detalle/\(name)")
+        print(url)
         var request = URLRequest(url: url as! URL)
         //request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
         

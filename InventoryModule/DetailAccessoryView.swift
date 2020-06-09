@@ -20,7 +20,14 @@ class AccessoryDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
+    class AccesoryDetail: AccessoryDetailView{
+        var product: AccesoriesModel?{
+            didSet{
+                nameAccessoryLabel.text = product?.nameAccesory
+                unidadesDisponiblesLabel.text = "Unidades disponible: \(product?.quantityAccesory)"
+            }
+        }
+    }
     
     
     //DE AQUI EN DELANTE CREAMOS LOS CONTROLES QUE QUERAMOS

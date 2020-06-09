@@ -14,13 +14,14 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
     let tokenapi = "7yh8ficfgWp-9F1LGafE3PsN1RmyiR__1nAhgoI3dMY"
 
     var products: [AccesoriesModel]?
-    
+    var product: [String] = []
     func fetchAccessories(){
         
         let url = NSURL(string: "https://etps4api.azurewebsites.net/ListaItems/accesorios")
         var request = URLRequest(url: url as! URL)
         //request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
 
+        
         
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
@@ -46,6 +47,9 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
                     //ENVIAMOS LOS DATOS A LA CLASE MODEL 
                     let producto = AccesoriesModel()
                     producto.nameAccesory = dictionary["item"] as? String
+                    self.product.append(producto.nameAccesory!)
+                    //print(" Guardando \(product[indexPath.)")
+                    
                     producto.quantityAccesory = "\((dictionary["cantidad"] as? Int)!)"
                     print("prueba dato dic \(dictionary["cantidad"] as? Int)")
                     producto.imageAccesory = "image"//dictionary["image"] as? String
@@ -120,7 +124,10 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layount = UICollectionViewFlowLayout()
         let controller = DetailAccessoryController(collectionViewLayout: layount)
-        controller.name = "Hola"
+        var name = product[indexPath.row].replacingOccurrences(of: " ", with: "%20", options:NSString.CompareOptions.literal, range: nil)
+        print(" enviando \(name)")
+        controller.name = name
+        
         //controller.q = "mundo"
         navigationController?.pushViewController(controller, animated: true )
     }
