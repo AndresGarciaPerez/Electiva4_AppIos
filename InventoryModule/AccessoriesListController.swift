@@ -46,7 +46,8 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
                     //ENVIAMOS LOS DATOS A LA CLASE MODEL 
                     let producto = AccesoriesModel()
                     producto.nameAccesory = dictionary["item"] as? String
-                    producto.quantityAccesory = dictionary["cantidad"] as? String
+                    producto.quantityAccesory = "\((dictionary["cantidad"] as? Int)!)"
+                    print("prueba dato dic \(dictionary["cantidad"] as? Int)")
                     producto.imageAccesory = "image"//dictionary["image"] as? String
 
                     
@@ -119,6 +120,8 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layount = UICollectionViewFlowLayout()
         let controller = DetailAccessoryController(collectionViewLayout: layount)
+        controller.name = "Hola"
+        //controller.q = "mundo"
         navigationController?.pushViewController(controller, animated: true )
     }
     

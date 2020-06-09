@@ -12,6 +12,8 @@ import UIKit
 class DetailAccessoryController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let vista = AccessoryDetailView()
+    var name = ""
+    //var q = ""
     
     override func loadView() {
         view = vista
@@ -24,7 +26,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Detalle Accesorio"
-        
+        fetchAccessories()
         let button = UIButton()
         button.frame = CGRect(x: 70, y: 310, width: 170, height: 30)
         button.titleLabel?.font = button.titleLabel?.font.withSize(12)
@@ -53,12 +55,51 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     //Esta funcion nos sirve para enviarle data al modelo 
     func fetchAccessories(){
     
-        self.products = [AccesoriesModel]()
-        let producto = AccesoriesModel()
-        producto.nameAccesory = "EJEMPLO NOMBRE ACCESORIO"
-        producto.quantityAccesory = "EJEMPLO CANTIDAD"
-        producto.imageAccesory = "EJEMPLO IMAGEN"
-        self.products?.append(producto)
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/ListaItems/Detalle/\(name)")
+        var request = URLRequest(url: url as! URL)
+        //request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
+        
+        
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if error != nil {
+                print(error ?? "genero")
+                return
+            }
+            
+            
+            //TRAEMOS LOS DATOS DE LA API
+            let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print(str ?? "Nose puede mostrar la respuesta")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                
+                self.products = [AccesoriesModel]()
+                
+                for dictionary in json as! [[String: AnyObject]]{
+                    //print(dictionary)
+                    
+                    //ENVIAMOS LOS DATOS A LA CLASE MODEL
+                    let producto = AccesoriesModel()
+                    producto.nameAccesory = dictionary["item"] as? String
+                    producto.quantityAccesory = dictionary["cantidad"] as? String
+                    producto.imageAccesory = "image"//dictionary["image"] as? String
+                    
+                    
+                    self.products?.append(producto)
+                    
+                    
+                }
+                self.collectionView?.reloadData()
+                
+                
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            }.resume()
         
     }
     

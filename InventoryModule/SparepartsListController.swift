@@ -47,7 +47,7 @@ class SparepartsListController: UICollectionViewController, UICollectionViewDele
                     //ENVIAMOS LOS DATOS A LA CLASE MODEL
                     let producto = AccesoriesModel()
                     producto.nameAccesory = dictionary["item"] as? String
-                    producto.quantityAccesory = dictionary["cantidad"] as? String
+                    producto.quantityAccesory = "\((dictionary["cantidad"] as? Int)!)"
                     producto.imageAccesory = "imagen"//dictionary["image"] as? String
                     
                     

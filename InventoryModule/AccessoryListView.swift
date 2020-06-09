@@ -33,6 +33,7 @@ class AccesoriesCell: AccessoriesViewCell{
         didSet {
             nameProduct.text = product?.nameAccesory
             quantityProduct.text = product?.quantityAccesory
+            print("prueba dato q \(product?.quantityAccesory), n \(product?.nameAccesory)")
             //setupImage()
 
         }
