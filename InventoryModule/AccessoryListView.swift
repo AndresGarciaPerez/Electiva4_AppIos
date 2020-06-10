@@ -11,16 +11,15 @@ import UIKit
 
 
 class AccessoriesViewCell: UICollectionViewCell {
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         setupViews()
         print("////////////DENTRO DE LA CLASE BASECELL/////////////////")
     }
     
-    func setupViews(){
-
+    func setupViews(){}
     
-    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -38,6 +37,7 @@ class AccesoriesCell: AccessoriesViewCell{
 
         }
     }
+    
     
     
     //ESTA FUNCION NOR SIRVE PARA VISUALIZAR LA IMAGEN QUE TRAEMOS DE LA API

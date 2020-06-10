@@ -11,15 +11,18 @@ import UIKit
 
 class DetailAccessoryController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let vista = AccessoryDetailView()
+    let vista = AccesoryDetail()
     var name = ""
-    var accesory: [AccesoriesModel]?
-    //var q = ""
+    var accesory: AccesoriesModel = AccesoriesModel()
     
+    //var q = ""
     override func loadView() {
+        fetchAccessories()
+        //accesory = fetchAccesory(name: self.name)
         view = vista
         view.backgroundColor = UIColor.white
-        
+        //print("\(accesory.nameAccesory!)")
+        vista.nameAccessoryLabel.text =  "\(accesory.nameAccesory)"
         
     }
     
@@ -27,7 +30,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Detalle Accesorio"
-        fetchAccessories()
+        
         let button = UIButton()
         button.frame = CGRect(x: 70, y: 310, width: 170, height: 30)
         button.titleLabel?.font = button.titleLabel?.font.withSize(12)
@@ -54,6 +57,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     
     
     //Esta funcion nos sirve para enviarle data al modelo 
+    
     func fetchAccessories(){
     
         let url = NSURL(string: "https://etps4api.azurewebsites.net/Detalle/\(name)")
@@ -86,13 +90,17 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
                     //ENVIAMOS LOS DATOS A LA CLASE MODEL
                     let producto = AccesoriesModel()
                     producto.nameAccesory = dictionary["item"] as? String
-                    producto.quantityAccesory = dictionary["cantidad"] as? String
+                    //self.accesory.nameAccesory = dictionary["item"] as? String
+                    print(producto.nameAccesory!)
+                    producto.quantityAccesory = "\(dictionary["cantidad"] as? Int)"
+                    print(producto.quantityAccesory!)
                     producto.imageAccesory = "image"//dictionary["image"] as? String
                     
                     
                     self.products?.append(producto)
-                    
-                    
+                    self.accesory = producto
+                    print("var accesory \(self.accesory.nameAccesory)")
+                    self.vista.nameAccessoryLabel.text =  "\(self.accesory.nameAccesory)"
                 }
                 self.collectionView?.reloadData()
                 

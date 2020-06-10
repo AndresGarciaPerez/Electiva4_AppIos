@@ -124,13 +124,15 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layount = UICollectionViewFlowLayout()
         let controller = DetailAccessoryController(collectionViewLayout: layount)
-        var name = product[indexPath.row].replacingOccurrences(of: " ", with: "%20", options:NSString.CompareOptions.literal, range: nil)
+        let name = product[indexPath.row].replacingOccurrences(of: " ", with: "%20", options:NSString.CompareOptions.literal, range: nil)
         print(" enviando \(name)")
+        //controller.accesory = fetchAccesory(name: name)
         controller.name = name
         
         //controller.q = "mundo"
         navigationController?.pushViewController(controller, animated: true )
     }
+    
     
     
     

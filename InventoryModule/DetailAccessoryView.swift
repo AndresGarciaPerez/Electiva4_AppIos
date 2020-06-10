@@ -10,26 +10,27 @@ import UIKit
 
 
 class AccessoryDetailView: UIView {
-    override init(frame: CGRect){
+    
+    override init(frame: CGRect)
+    {
         super.init(frame: frame)
         AccessoryDetailLayout()
-        
-}
+        print("vista detalle")
+    }
+    func AccessoryDetailLayout(){}
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    class AccesoryDetail: AccessoryDetailView{
-        var product: AccesoriesModel?{
-            didSet{
-                nameAccessoryLabel.text = product?.nameAccesory
-                unidadesDisponiblesLabel.text = "Unidades disponible: \(product?.quantityAccesory)"
-            }
+}
+class AccesoryDetail: AccessoryDetailView{
+    
+    var product: AccesoriesModel?{
+        didSet{
+            nameAccessoryLabel.text = product?.nameAccesory
+            print ("view \(nameAccessoryLabel.text)")
         }
     }
-    
-    
     //DE AQUI EN DELANTE CREAMOS LOS CONTROLES QUE QUERAMOS
     let accessoryImage: UIImageView = {
         let imageView  = UIImageView()
@@ -109,7 +110,7 @@ class AccessoryDetailView: UIView {
     
     //ESTE ES LA FUNCION LA CUAL HAY QUE AGREGARLE LOS LABEL, IMAGEVIEW, ETC
     //TAMBIEN AQUI SE LE DARA LA UBICACION Y TAMAANIO A CADA CONTROL
-    func AccessoryDetailLayout() {
+    override func AccessoryDetailLayout() {
         addSubview(accessoryImage)
         addSubview(nameAccessoryLabel)
         addSubview(numSerieLabel)
