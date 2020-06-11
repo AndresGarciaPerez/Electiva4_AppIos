@@ -19,7 +19,7 @@ class LocationsController: UICollectionViewController, UICollectionViewDelegateF
     
     func fetchAccessories(){
     
-    let url = NSURL(string: "https:electivaapi.herokuapp.com/api/v1/products")
+    let url = NSURL(string: "https://etps4api.azurewebsites.net/Ubicacion/Alpha")
     var request = URLRequest(url: url as! URL)
     request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
     
@@ -47,8 +47,8 @@ class LocationsController: UICollectionViewController, UICollectionViewDelegateF
     
     //ENVIAMOS LOS DATOS A LA CLASE MODEL
     let producto = AccesoriesModel()
-    producto.nameAccesory = dictionary["name"] as? String
-    producto.quantityAccesory = dictionary["name"] as? String
+    producto.nameAccesory = dictionary["almacen"] as? String
+    producto.quantityAccesory = "\((dictionary["cantidad"] as? Int)!)"
     producto.imageAccesory = dictionary["image"] as? String
     
     
