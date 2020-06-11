@@ -17,12 +17,18 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     
     //var q = ""
     override func loadView() {
-        fetchAccessories()
+        //fetchAccessories()
+        vista.name = name
+        print(name)
         //accesory = fetchAccesory(name: self.name)
         view = vista
         view.backgroundColor = UIColor.white
+        vista.name = name
+        print("vista acc \(vista.name)")
+        //vista.proveedorLabel.text = name
         //print("\(accesory.nameAccesory!)")
-        vista.nameAccessoryLabel.text =  "\(accesory.nameAccesory)"
+        vista.nameAccessoryLabel.text =  name
+        vista.fetchAccessories(vari: name)
         
     }
     
@@ -41,6 +47,8 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
         button.layer.cornerRadius = 3
         button.addTarget(self, action: #selector(locations), for: .touchUpInside)
         self.view.addSubview(button)
+        vista.name = name
+        print("vista acc \(vista.name)")
      
     }
     
@@ -58,7 +66,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     
     //Esta funcion nos sirve para enviarle data al modelo 
     
-    func fetchAccessories(){
+    /*func fetchAccessories(){
     
         let url = NSURL(string: "https://etps4api.azurewebsites.net/Detalle/\(name)")
         print(url)
@@ -94,15 +102,10 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
                     print(producto.nameAccesory!)
                     producto.quantityAccesory = "\(dictionary["cantidad"] as? Int)"
                     print(producto.quantityAccesory!)
-                    producto.imageAccesory = "image"//dictionary["image"] as? String
-                    
-                    
-                    self.products?.append(producto)
                     self.accesory = producto
-                    print("var accesory \(self.accesory.nameAccesory)")
-                    self.vista.nameAccessoryLabel.text =  "\(self.accesory.nameAccesory)"
+                    print(self.accesory.nameAccesory!)
                 }
-                self.collectionView?.reloadData()
+                //self.collectionView?.reloadData()
                 
                 
             } catch let jsonError {
@@ -111,7 +114,7 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
             
             }.resume()
         
-    }
+    }*/
     
 
     

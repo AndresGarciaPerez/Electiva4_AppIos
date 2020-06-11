@@ -11,12 +11,13 @@ import UIKit
 
 class DetailSparepartController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let vista = SparepartDetailView()
-    
+    let vista = SparepartDetail()
+    var name = ""
     override func loadView() {
         view = vista
         view.backgroundColor = UIColor.white
         
+        vista.fetchAccessories(vari: name)
         
     }
     

@@ -15,6 +15,7 @@ class SparepartsListController: UICollectionViewController, UICollectionViewDele
     let tokenapi = "7yh8ficfgWp-9F1LGafE3PsN1RmyiR__1nAhgoI3dMY"
     
     var products: [AccesoriesModel]?
+    var product: [String] = []
     
     func fetchAccessories(){
         
@@ -50,7 +51,7 @@ class SparepartsListController: UICollectionViewController, UICollectionViewDele
                     producto.quantityAccesory = "\((dictionary["cantidad"] as? Int)!)"
                     producto.imageAccesory = "imagen"//dictionary["image"] as? String
                     
-                    
+                    self.product.append(producto.nameAccesory!)
                     self.products?.append(producto)
                     
                     
@@ -120,6 +121,9 @@ class SparepartsListController: UICollectionViewController, UICollectionViewDele
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layount = UICollectionViewFlowLayout()
         let controller = DetailSparepartController(collectionViewLayout: layount)
+        let name = product[indexPath.row]
+        print("enviando repuesto \(name)")
+        controller.name = name
         navigationController?.pushViewController(controller, animated: true )
     }
     

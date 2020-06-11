@@ -25,26 +25,30 @@ class AccessoryDetailView: UIView {
 }
 class AccesoryDetail: AccessoryDetailView{
     
+    var name: String = ""
+    var accesory: AccesoriesModel = AccesoriesModel()
     var product: AccesoriesModel?{
         didSet{
-            nameAccessoryLabel.text = product?.nameAccesory
+            //fetchAccessories()
+            //nameAccessoryLabel.text = accesory.nameAccesory
             print ("view \(nameAccessoryLabel.text)")
         }
     }
+    
     //DE AQUI EN DELANTE CREAMOS LOS CONTROLES QUE QUERAMOS
     let accessoryImage: UIImageView = {
         let imageView  = UIImageView()
         imageView.widthAnchor.constraint(equalToConstant: 130).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         imageView.backgroundColor = UIColor.green
-        imageView.image = UIImage(named: "earpods")
+        imageView.image = UIImage(named: "Esperando")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let nameAccessoryLabel: UILabel = {
         let label = UILabel()
-        label.text = "EarPods"
+        label.text = "Esperando"
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -52,7 +56,7 @@ class AccesoryDetail: AccessoryDetailView{
     
     let numSerieLabel: UILabel = {
         let label = UILabel()
-        label.text = "Numero de serie: 1234-5"
+        label.text = "Esperando"
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,7 +64,7 @@ class AccesoryDetail: AccessoryDetailView{
     
     let fechaEntregaLabel: UILabel = {
         let label = UILabel()
-        label.text = "Fecha de entrega: 21/02/2019"
+        label.text = "Esperando"
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -68,7 +72,7 @@ class AccesoryDetail: AccessoryDetailView{
     
     let precioCompraLabel: UILabel = {
         let label = UILabel()
-        label.text = "Precio de compra/U: $80.00"
+        label.text = "Esperando"
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -76,7 +80,7 @@ class AccesoryDetail: AccessoryDetailView{
     
     let unidadesDisponiblesLabel: UILabel = {
         let label = UILabel()
-        label.text = "Unidades disponibles: 75"
+        label.text = "Esperando"
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -84,7 +88,7 @@ class AccesoryDetail: AccessoryDetailView{
     
     let proveedorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Proveedor: Apple"
+        label.text = "Esperando"
         label.font = label.font.withSize(12)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -111,13 +115,16 @@ class AccesoryDetail: AccessoryDetailView{
     //ESTE ES LA FUNCION LA CUAL HAY QUE AGREGARLE LOS LABEL, IMAGEVIEW, ETC
     //TAMBIEN AQUI SE LE DARA LA UBICACION Y TAMAANIO A CADA CONTROL
     override func AccessoryDetailLayout() {
+        //fetchAccessories()
+        print(accesory.nameAccesory)
+        nameAccessoryLabel.text = accesory.nameAccesory
         addSubview(accessoryImage)
-        addSubview(nameAccessoryLabel)
-        addSubview(numSerieLabel)
-        addSubview(fechaEntregaLabel)
-        addSubview(precioCompraLabel)
-        addSubview(unidadesDisponiblesLabel)
-        addSubview(proveedorLabel)
+        addSubview(nameAccessoryLabel)//
+        addSubview(numSerieLabel)//
+        addSubview(fechaEntregaLabel)//
+        addSubview(precioCompraLabel)//
+        addSubview(unidadesDisponiblesLabel)//
+        addSubview(proveedorLabel)//
         //addSubview(ubicacionButton)
 
         
@@ -156,7 +163,57 @@ class AccesoryDetail: AccessoryDetailView{
     }
     
  
-    
+    func fetchAccessories(vari: String){
+        var search = vari.replacingOccurrences(of: " ", with: "%20", options:NSString.CompareOptions.literal, range: nil)
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/Detalle/\(search)")
+        print(url)
+        var request = URLRequest(url: url as! URL)
+        //request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
+        
+        
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if error != nil {
+                print(error ?? "genero")
+                return
+            }
+            
+            
+            //TRAEMOS LOS DATOS DE LA API
+            let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print(str ?? "Nose puede mostrar la respuesta")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                
+                
+                for dictionary in json as! [[String: AnyObject]]{
+                    //print(dictionary)
+                    
+                    //ENVIAMOS LOS DATOS A LA CLASE MODEL
+                    let producto = AccesoriesModel()
+                    
+                    self.nameAccessoryLabel.text = "\((dictionary["item"] as? String)!)"
+                    self.unidadesDisponiblesLabel.text = ("Unidades disponibles: \((dictionary["cantidad"] as? Int)!)")
+                    self.proveedorLabel.text = ("Proveedor: \((dictionary["proveedor"] as? String)!)")
+                    self.numSerieLabel.text = ("Modelo: \((dictionary["modelo"] as? String)!)")
+                    self.fechaEntregaLabel.text = ("Marca: \((dictionary["marca"] as? String)!)")
+                    self.precioCompraLabel.text = "\((dictionary["marca"] as? String)!) \((dictionary["item"] as? String)!) \((dictionary["modelo"] as? String)!)"
+                    
+                    
+                }
+                //self.collectionView?.reloadData()
+                
+            
+                
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            }.resume()
+        
+    }
     
     
 }
