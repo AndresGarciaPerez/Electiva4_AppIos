@@ -42,6 +42,7 @@ class DetailSparepartController: UICollectionViewController, UICollectionViewDel
     func locations(sender: UIButton){
         let layount = UICollectionViewFlowLayout()
         let controller = LocationsController(collectionViewLayout: layount)
+        controller.name = name
         navigationController?.pushViewController(controller, animated: true )
     }
     

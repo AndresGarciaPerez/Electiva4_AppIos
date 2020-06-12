@@ -55,6 +55,8 @@ class DetailAccessoryController: UICollectionViewController, UICollectionViewDel
     func locations(sender: UIButton){
         let layount = UICollectionViewFlowLayout()
         let controller = LocationsController(collectionViewLayout: layount)
+        controller.name = name
+        print(controller.name)
         navigationController?.pushViewController(controller, animated: true )
     }
     

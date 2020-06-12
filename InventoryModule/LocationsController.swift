@@ -17,9 +17,14 @@ class LocationsController: UICollectionViewController, UICollectionViewDelegateF
     
     var products: [AccesoriesModel]?
     
-    func fetchAccessories(){
+    var name = ""
     
-    let url = NSURL(string: "https://etps4api.azurewebsites.net/Ubicacion/Alpha")
+    
+    func fetchAccessories(){
+        name = name.replacingOccurrences(of: " ", with: "%20", options:NSString.CompareOptions.literal, range: nil)
+    print("location \(self.name)")
+    let url = NSURL(string: "https://etps4api.azurewebsites.net/Ubicacion/\(self.name)")
+    print(url)
     var request = URLRequest(url: url as! URL)
     request.addValue("Bearer \(tokenapi)", forHTTPHeaderField: "Authorization")
     
@@ -119,7 +124,7 @@ class LocationsController: UICollectionViewController, UICollectionViewDelegateF
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let layount = UICollectionViewFlowLayout()
         let controller = DetailAccessoryController(collectionViewLayout: layount)
-        navigationController?.pushViewController(controller, animated: true )
+        //navigationController?.pushViewController(controller, animated: true )
     }
     
 
