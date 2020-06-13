@@ -10,6 +10,7 @@ import UIKit
 
 class LoginController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     let vista = ViewLogin()
+    var Login: Bool = false
     
     override func loadView() {
         view = vista
@@ -29,54 +30,75 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     func login(sender: UIButton){
-        //fetchLogin()
-        let controller = MenuBar()
-        self.present(controller, animated: true, completion: nil)
+        if self.vista.emailTextField.text! != "" && self.vista.passTextField.text! != ""{
+            
+            self.Login = fetchLogin(user: self.vista.emailTextField.text!, pass: self.vista.passTextField.text!)
+            print("\(Login)")
+            if Login{
+                let controller = MenuBar()
+                self.present(controller, animated: true, completion: nil)
+            }
+            else{
+                self.vista.welcomeLabel.text = "Usuario Incorrecto"
+            }
+        }else{
+            self.vista.welcomeLabel.text = "Campos vacios"
+        }
+        
+        /*print(self.vista.emailTextField.text)*/
     }
     
     
     
     var logins: [LoginModel]?
-    func fetchLogin(){
-        
-        
-        let parameters = [
-            "email": "kevin@electiva.io",
-            "password": "secret",
-            "grant_type": "password"
-        ]
-        
-        guard let url = URL(string: "https://etps4api.azurewebsites.net/Login/josh/password") else{return}
-        var request = URLRequest(url: url)
-        //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-   
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else{
-        return}
-        request.httpBody = httpBody
-        
-        let session = URLSession.shared
-        session.dataTask(with: request) {(data, response, error) in
-            if let response = response {
-                print(response)
+    func fetchLogin(user: String, pass: String)-> Bool{
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/login/\(user)/\(pass)")
+        print(url)
+        var request = URLRequest(url: url as! URL)
+        var loginD = false
+        print("loginD \(loginD)")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if error != nil {
+                print(error ?? "genero")
+                return
             }
             
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
-                } catch {
-                    print(error)
-                }
+            
+            //TRAEMOS LOS DATOS DE LA API
+            let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print(str ?? "Nose puede mostrar la respuesta")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                print("loginD \(loginD)")
+                //self.products = [AccesoriesModel]()
                 
+                for dictionary in json as! [[String: AnyObject]]{
+                    var x: Bool = false
+                    print("loginD \(loginD)")
+                    print("x \(x)")
+                    if let email = dictionary["email"] as? NSNull{
+                        x = false
+                        print("x \(x)")
+                    }else if let email = dictionary["email"] as? String{
+                        x = true
+                        print("x \(x)")
+                    }
+                    print("x \(x)")
+                    loginD = x
+                    print("loginD \(loginD)")
+                }
+                //self.collectionView?.reloadData()
+                
+                print("loginD \(loginD)")
+            } catch let jsonError {
+                print(jsonError)
             }
-            
-        }.resume()
-        
-            
-
-  
-        
+            print("loginD \(loginD)")
+            }.resume()
+        print("loginD \(loginD)")
+        return loginD
     }
 
     

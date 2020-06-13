@@ -13,6 +13,10 @@ import UIKit
 class ProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let vista = ViewProfile()
+    var nameU=""
+    var surU=""
+    var mail=""
+    var rol=""
     
     override func loadView() {
         view = vista
