@@ -13,6 +13,7 @@ class AccesoriesModel: NSObject{
     var imageAccesory: String?
     var nameAccesory: String?
     var quantityAccesory: String?
+    var imageS: NSData?
     
     
 }

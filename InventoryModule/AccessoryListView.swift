@@ -32,6 +32,7 @@ class AccesoriesCell: AccessoriesViewCell{
         didSet {
             nameProduct.text = product?.nameAccesory
             quantityProduct.text = product?.quantityAccesory
+            //imageProduct.image = UIImage(data: (product?.imageS)! as Data)
             print("prueba dato q \(product?.quantityAccesory), n \(product?.nameAccesory)")
             //setupImage()
 

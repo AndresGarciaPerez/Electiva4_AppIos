@@ -13,14 +13,17 @@ import UIKit
 class ProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     let vista = ViewProfile()
-    var nameU=""
-    var surU=""
-    var mail=""
-    var rol=""
+    var nameU="Josue "
+    var surU="Beltran"
+    var mail="josh@gmail.com"
+    var rol="Administrador"
     
     override func loadView() {
         view = vista
         view.backgroundColor = UIColor.white
+        vista.nameProfileLabel.text = ("\(nameU)\(surU)")
+        vista.setUserProfileLabel.text = mail
+        vista.levelProfileLabel.text = rol
     }
     
     

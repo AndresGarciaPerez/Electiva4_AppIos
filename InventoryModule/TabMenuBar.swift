@@ -9,13 +9,16 @@
 import UIKit
 
 class MenuBar: UITabBarController {
+    var name = ""
     
     override func viewDidLoad() {
+        print(name)
+        
         let layount = UICollectionViewFlowLayout()
         let accessoriesOption = SparepartsListController(collectionViewLayout: layount)
         let sparePartsOption = AccessoriesListController(collectionViewLayout: layount)
         let profileOption = ProfileController(collectionViewLayout: layount)
-        
+        //profileOption.nameU = name
         let accessories = UINavigationController(rootViewController: accessoriesOption)
         accessories.tabBarItem.title = "Repuestos"
         accessories.tabBarItem.image = UIImage(named: "icons8-auriculares-32")

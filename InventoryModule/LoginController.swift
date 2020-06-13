@@ -11,6 +11,64 @@ import UIKit
 class LoginController: UICollectionViewController, UICollectionViewDelegateFlowLayout{
     let vista = ViewLogin()
     var Login: Bool = false
+    var Login2: Bool = false
+    let controller = MenuBar()
+    
+    func fetchLogin(user: String, pass: String)-> Bool{
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/login/josh/password")
+        print(url)
+        var request = URLRequest(url: url as! URL)
+        var loginD = false
+        print("loginD 1 \(loginD)")
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if error != nil {
+                print(error ?? "genero")
+                return
+            }
+            
+            
+            //TRAEMOS LOS DATOS DE LA API
+            let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print(str ?? "Nose puede mostrar la respuesta")
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                print("loginD 2 \(loginD)")
+                //self.products = [AccesoriesModel]()
+                
+                for dictionary in json as! [[String: AnyObject]]{
+                    var x: Bool = false
+                    print("loginD 3 \(loginD)")
+                    print("x \(x)")
+                    if let email = dictionary["email"] as? NSNull{
+                        x = false
+                        print("x \(x)")
+                    }else if let email = dictionary["email"] as? String{
+                        if user == (dictionary["email"] as? String)!{
+                            x = true
+                            self.Login2 = true
+                            print("x \(x)")
+                        }else{
+                            x = false
+                        }
+                    }
+                    print("x \(x)")
+                    loginD = x
+                    print("loginD 4 \(loginD)")
+                }
+                //self.collectionView?.reloadData()
+                
+                print("loginD 5 \(loginD)")
+            } catch let jsonError {
+                print(jsonError)
+            }
+            print("loginD 6 \(loginD)")
+            }.resume()
+        print("loginD 7 \(loginD)")
+        Login = loginD
+        return loginD
+    }
     
     override func loadView() {
         view = vista
@@ -31,10 +89,10 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
     
     func login(sender: UIButton){
         if self.vista.emailTextField.text! != "" && self.vista.passTextField.text! != ""{
-            
+            print("\(fetchLogin(user: self.vista.emailTextField.text!, pass: self.vista.passTextField.text!))")
             self.Login = fetchLogin(user: self.vista.emailTextField.text!, pass: self.vista.passTextField.text!)
             print("\(Login)")
-            if Login{
+            if Login2{
                 let controller = MenuBar()
                 self.present(controller, animated: true, completion: nil)
             }
@@ -44,62 +102,16 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
         }else{
             self.vista.welcomeLabel.text = "Campos vacios"
         }
-        
+        //let controller = MenuBar()
+        //self.Login = fetchLogin(user: self.vista.emailTextField.text!, pass: self.vista.passTextField.text!)
+        //self.present(controller, animated: true, completion: nil)
         /*print(self.vista.emailTextField.text)*/
     }
     
     
     
     var logins: [LoginModel]?
-    func fetchLogin(user: String, pass: String)-> Bool{
-        let url = NSURL(string: "https://etps4api.azurewebsites.net/login/\(user)/\(pass)")
-        print(url)
-        var request = URLRequest(url: url as! URL)
-        var loginD = false
-        print("loginD \(loginD)")
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            if error != nil {
-                print(error ?? "genero")
-                return
-            }
-            
-            
-            //TRAEMOS LOS DATOS DE LA API
-            let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(str ?? "Nose puede mostrar la respuesta")
-            
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-                print("loginD \(loginD)")
-                //self.products = [AccesoriesModel]()
-                
-                for dictionary in json as! [[String: AnyObject]]{
-                    var x: Bool = false
-                    print("loginD \(loginD)")
-                    print("x \(x)")
-                    if let email = dictionary["email"] as? NSNull{
-                        x = false
-                        print("x \(x)")
-                    }else if let email = dictionary["email"] as? String{
-                        x = true
-                        print("x \(x)")
-                    }
-                    print("x \(x)")
-                    loginD = x
-                    print("loginD \(loginD)")
-                }
-                //self.collectionView?.reloadData()
-                
-                print("loginD \(loginD)")
-            } catch let jsonError {
-                print(jsonError)
-            }
-            print("loginD \(loginD)")
-            }.resume()
-        print("loginD \(loginD)")
-        return loginD
-    }
+    
 
     
     

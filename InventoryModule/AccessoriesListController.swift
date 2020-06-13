@@ -52,7 +52,8 @@ class AccessoriesListController: UICollectionViewController, UICollectionViewDel
                     
                     producto.quantityAccesory = "\((dictionary["cantidad"] as? Int)!)"
                     print("prueba dato dic \(dictionary["cantidad"] as? Int)")
-                    producto.imageAccesory = "image"//dictionary["image"] as? String
+                    producto.imageAccesory = dictionary["image"] as? String
+                    //producto.imageS = NSData(base64Encoded: (dictionary["image"] as? String)!, options: NSData.Base64DecodingOptions(rawValue: 0))!
 
                     
                     self.products?.append(producto)

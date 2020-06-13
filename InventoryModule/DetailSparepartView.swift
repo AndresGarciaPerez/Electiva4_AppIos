@@ -32,7 +32,7 @@ class SparepartDetail: SparepartDetailView{
         imageView.widthAnchor.constraint(equalToConstant: 130).isActive = true
         imageView.heightAnchor.constraint(equalToConstant: 130).isActive = true
         imageView.backgroundColor = UIColor.green
-        imageView.image = UIImage(named: "earpods")
+        imageView.image = UIImage(named: "Esperando")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -166,6 +166,10 @@ class SparepartDetail: SparepartDetailView{
                     self.numSerieLabel.text = ("Modelo: \((dictionary["modelo"] as? String)!)")
                     self.fechaEntregaLabel.text = ("Marca: \((dictionary["marca"] as? String)!)")
                     self.precioCompraLabel.text = "\((dictionary["marca"] as? String)!) \((dictionary["item"] as? String)!) \((dictionary["modelo"] as? String)!)"
+                    let dtaDecoded : Data = Data(base64Encoded: (dictionary["imagen"] as? String)!, options: .ignoreUnknownCharacters)!
+                    let imageDecoded: UIImage = UIImage(data: dtaDecoded)!
+                    print("imagen detalle \(imageDecoded)")
+                    self.accessoryImage.image = imageDecoded
                     
                     
                 }
