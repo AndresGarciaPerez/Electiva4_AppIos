@@ -15,7 +15,7 @@ class LoginController: UICollectionViewController, UICollectionViewDelegateFlowL
     let controller = MenuBar()
     
     func fetchLogin(user: String, pass: String)-> Bool{
-        let url = NSURL(string: "https://etps4api.azurewebsites.net/login/josh/password")
+        let url = NSURL(string: "https://etps4api.azurewebsites.net/login/\(user)/\(pass)")
         print(url)
         var request = URLRequest(url: url as! URL)
         var loginD = false
